@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS `movie`;
-CREATE DATABASE `movie`;
-USE `movie`;
-
 /*
 Shows all ratings after January 1st, 2005, only displays 50 rows
 */
