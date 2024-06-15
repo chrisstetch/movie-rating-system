@@ -35,3 +35,16 @@ GROUP BY ratings.userid
 HAVING `Number of ratings by user` >= 10
 ORDER BY `Average user rating` DESC
 LIMIT 20;
+
+/*
+Displays all movies in the Science Fiction genre with over 5000 total reviews and a minimum average
+review of 3.5
+*/
+SELECT genres.title, COUNT(ratings.rating) AS `Total Ratings`,
+AVG(ratings.rating) AS `Average Rating`
+FROM ratings JOIN genres ON ratings.movieid = genres.id
+WHERE genres.genre LIKE '%Science Fiction%'
+GROUP BY genres.title
+HAVING `Total Ratings` >= 5000 AND `Average Rating` >= 3.5
+ORDER BY `Average Rating` DESC
+LIMIT 20;
