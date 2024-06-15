@@ -22,3 +22,16 @@ the movie title is found by joining the movie id from the ratings table to the m
 SELECT ratings.userid, ratings.rating, movies.title FROM ratings
 INNER JOIN movies ON ratings.movieID = movies.id
 WHERE timestamp > 1104537600 AND rating >= 4.0 LIMIT 50;
+
+/*
+Displays all users who rated movies with a budget of $65 million along with how many ratings they did
+and the average. Orders by descending rating and limits output to 20.
+*/
+SELECT ratings.userid, COUNT(ratings.rating) AS `Number of ratings by user`,
+AVG(ratings.rating) AS `Average user rating`
+FROM ratings JOIN Movies ON ratings.movieid = Movies.id
+WHERE Movies.budget > 65000000
+GROUP BY ratings.userid
+HAVING `Number of ratings by user` >= 10
+ORDER BY `Average user rating` DESC
+LIMIT 20;
