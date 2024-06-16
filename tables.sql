@@ -97,14 +97,14 @@ DROP TABLE IF EXISTS `crew`;
 CREATE TABLE `crew` (
 	movie_id INT, 
     credit_id TEXT, 
-    deparement TEXT, 
+    department TEXT, 
     gender TEXT, 
     id INT, 
     job TEXT, 
     `name` TEXT, 
     profile_path TEXT);
 
-LOAD DATA LOCAL INFILE 'C:\\Users\\derpy\\Documents\\uvic\\2024 05 Summer\\CSC 370\\Project\\movie-rating-system\\data\\parsed_crew.csv'
+LOAD DATA LOCAL INFILE 'C:\\Users\\chris\\Documents\\uvic\\2024 05 Summer\\CSC 370\\Project\\movie-rating-system\\data\\parsed_crew.csv'
 INTO TABLE `crew`
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
