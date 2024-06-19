@@ -110,3 +110,34 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
+
+/*
+Actors table creation
+*/
+
+DROP TABLE IF EXISTS `actors`
+CREATE TABLE `actors`(
+	`movieid` INT, 
+	`character` VARCHAR(400), 
+	`gender` TINYINT, 
+	`name` VARCHAR(400), 
+	PRIMARY KEY(`movieid`)); 
+
+LOAD DATA LOCAL INFILE 'C:\\Users\\chris\\Documents\\uvic\\2024 05 Summer\\CSC 370\\Project\\movie-rating-system\\data\\parsed_cast.csv'
+INTO TABLE actors
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+/*
+Users table creation
+*/
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`(
+	`userid` INT, 
+	`username` VARCHAR(50), 
+	`email` VARCHAR(50), 
+	PRIMARY KEY(`userid`));
