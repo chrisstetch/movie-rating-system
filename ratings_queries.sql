@@ -48,3 +48,33 @@ GROUP BY genres.title
 HAVING `Total Ratings` >= 5000 AND `Average Rating` >= 3.5
 ORDER BY `Average Rating` DESC
 LIMIT 20;
+
+/*Displays all movies that have a rating higher than the overall average rating*/
+SELECT ratings.movieid, movies.title, ratings.rating
+FROM ratings JOIN movies ON ratings.movieid = movies.id
+WHERE ratings.rating > (
+    SELECT AVG(rating)
+    FROM ratings
+)
+ORDER BY ratings.rating DESC
+LIMIT 10;
+
+/*Displays all movies and their average rating in the science fiction genre*/
+SELECT movies.title, AVG(ratings.rating) AS `Average Rating`
+FROM ratings JOIN movies ON ratings.movieid = movies.id
+WHERE movies.id IN (
+    SELECT genres.id
+    FROM genres
+    WHERE genres.genre = 'Science Fiction'
+)
+GROUP BY movies.title
+LIMIT 10;
+
+/*Displays all movies that have not been rated by a user*/
+SELECT id, title
+FROM movies
+WHERE id NOT IN (
+    SELECT DISTINCT movieid
+    FROM ratings
+)
+LIMIT 10;
