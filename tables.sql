@@ -115,7 +115,7 @@ IGNORE 1 LINES;
 Actors table creation
 */
 
-DROP TABLE IF EXISTS `actors`
+DROP TABLE IF EXISTS `actors`;
 CREATE TABLE `actors`(
 	`movieid` INT, 
 	`character` VARCHAR(400), 
@@ -140,4 +140,13 @@ CREATE TABLE `users`(
 	`userid` INT, 
 	`username` VARCHAR(50), 
 	`email` VARCHAR(50), 
+    `role` VARCHAR(50),
 	PRIMARY KEY(`userid`));
+
+LOAD DATA LOCAL INFILE 'C:\\Users\\chris\\Documents\\uvic\\2024 05 Summer\\CSC 370\\Project\\movie-rating-system\\data\\users.csv'
+INTO TABLE users
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
