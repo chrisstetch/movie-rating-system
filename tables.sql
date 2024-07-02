@@ -118,9 +118,14 @@ Actors table creation
 DROP TABLE IF EXISTS `actors`;
 CREATE TABLE `actors`(
 	`movieid` INT, 
-	`character` VARCHAR(400), 
+    `cast_id` INT,
+	`character` VARCHAR(400),
+    `credit_id` VARCHAR(50),
 	`gender` TINYINT, 
+    `id` INT,
 	`name` VARCHAR(400), 
+    `order` INT,
+    `profile_path` VARCHAR(400),
 	PRIMARY KEY(`movieid`)); 
 
 LOAD DATA LOCAL INFILE 'C:\\Users\\chris\\Documents\\uvic\\2024 05 Summer\\CSC 370\\Project\\movie-rating-system\\data\\parsed_cast.csv'
