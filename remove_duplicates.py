@@ -16,7 +16,7 @@ def removeDuplicate(fname):
     Description
     -----------
     Using the pandas library this function will scan through each
-    each column in a provided csv file. If there is a duplicated
+    column in a provided csv file. If there is a duplicated
     entry found in the columns then that entire row is deleted
     to ensure each column only contains unique values.
 
