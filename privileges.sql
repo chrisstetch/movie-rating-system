@@ -10,5 +10,3 @@ Grants SELECT privilege on the anonymous ratings view to a regular user
 */
 GRANT SELECT ON movies.ratings_anonymous TO schester;
 FLUSH PRIVILEGES;
-
-A
