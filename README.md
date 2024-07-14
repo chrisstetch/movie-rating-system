@@ -1,5 +1,5 @@
 # movie-rating-system
-A movie rating system using MySQL.
+A movie rating relational database management system using MySQL.
 
 Created by: Harithik, Sarp and Chris
 
