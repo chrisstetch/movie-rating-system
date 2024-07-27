@@ -19,5 +19,6 @@ WHERE `ratings`.`userid` NOT IN (
     JOIN `movies` ON `ratings`.`movieID` = `movies`.`id`
      JOIN `genres` ON `movies`.`id` = `genres`.`id`
     WHERE `genres`.`genre` = 'Comedy'
+    OR `genres`.`genre` IS NULL
 );
 
