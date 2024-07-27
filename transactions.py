@@ -54,7 +54,7 @@ def dbConnect(attempts = 3):
                     logger.info("Transaction rolled back") #Rollback if any errors occur during transaction
                 state = input("Do you want to execute another transaction Y/N: ").upper()
                 if state != 'Y':
-                    logger.info("Closing connection to database....")
+                    logger.info("Closing connection to database")
                     break
             db_connect.close()
             return
